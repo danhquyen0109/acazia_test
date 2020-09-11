@@ -2,8 +2,8 @@ import 'package:acazia_test/model/location_model.dart';
 import 'package:acazia_test/model/login_model.dart';
 import 'package:acazia_test/model/picture_model.dart';
 
-class Result {
-  Result({
+class User {
+  User({
     this.gender,
     this.name,
     this.location,
@@ -31,7 +31,7 @@ class Result {
   Picture picture;
   String nat;
 
-  factory Result.fromJson(Map<String, dynamic> json) => Result(
+  factory User.fromJson(Map<String, dynamic> json) => User(
         gender: json["gender"],
         name: json["name"]["title"] +
             json["name"]["first"] +

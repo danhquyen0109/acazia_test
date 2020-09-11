@@ -1,7 +1,11 @@
+import 'package:acazia_test/utils/global.dart';
 import 'package:acazia_test/view/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  storage = await SharedPreferences.getInstance();
   runApp(MyApp());
 }
 
