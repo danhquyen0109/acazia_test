@@ -1,6 +1,7 @@
 # acazia_test
 
 A new Flutter project.
+Flutter version 1.20.2
 
 ## Getting Started
 

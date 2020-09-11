@@ -27,11 +27,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   Stream<HomeState> _getUser() async* {
-    User user;
-    String filePath = "lib/data/data.json";
     yield GetUserOnLoading();
     try {
+      User user;
+      String filePath = "lib/data/data.json";
       String content = await rootBundle.loadString(filePath);
+      await Future.delayed(Duration(milliseconds: 5));
       var data = json.decode(content);
       user = User.fromJson(data["results"][0]);
       yield GetUserSuccess(user: user);

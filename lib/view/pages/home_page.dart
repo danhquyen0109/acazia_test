@@ -19,8 +19,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  User user;
-
   User currenUser;
   CardController controller;
   HomeBloc bloc;
@@ -56,11 +54,6 @@ class _HomePageState extends State<HomePage> {
                       maxWidth: Screen.width * 0.9,
                       minWidth: Screen.width * 0.8,
                       cardBuilder: (context, index) {
-                        // return ProfileCard(
-                        //   user: users[index],
-                        //   height: Screen.width * 0.9,
-                        //   width: Screen.width * 0.9,
-                        // );
                         return index == 0
                             ? ProfileCard(
                                 user: users[index],
@@ -98,11 +91,7 @@ class _HomePageState extends State<HomePage> {
         },
         listener: (BuildContext context, HomeState state) {
           if (state is GetUserSuccess) {
-            // user = state.user;
-            if (users.isNotEmpty) {
-              users.removeAt(0);
-            }
-            users.insert(0, state.user);
+            users = [state.user];
           }
           if (state is GetUserFail) {
             showMessage(message: "Không thành công");
