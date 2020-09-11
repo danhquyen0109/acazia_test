@@ -2,6 +2,8 @@ import 'package:acazia_test/model/location_model.dart';
 import 'package:acazia_test/model/login_model.dart';
 import 'package:acazia_test/model/picture_model.dart';
 
+import '../utils/global.dart';
+
 class User {
   User({
     this.gender,
@@ -34,8 +36,12 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) => User(
         gender: json["gender"],
         name: json["name"]["title"] +
+            " " +
             json["name"]["first"] +
-            json["name"]["last"],
+            " " +
+            json["name"]["last"] +
+            " " +
+            random.nextInt(1000).toString(),
         location: Location.fromJson(json["location"]),
         email: json["email"],
         login: Login.fromJson(json["login"]),

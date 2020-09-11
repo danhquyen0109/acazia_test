@@ -13,6 +13,12 @@ class GetUserSuccess extends HomeState {
 
 class GetUserFail extends HomeState {}
 
+class GetUserOnLoading extends HomeState {}
+
+class GetUserEmpty extends HomeState {}
+
 class StoreAsFavSuccess extends HomeState {}
 
 class StoreAsFavFail extends HomeState {}
+
+class StoreOnLoading extends HomeState {}
